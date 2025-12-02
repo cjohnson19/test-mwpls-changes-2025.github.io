@@ -1,3 +1,46 @@
+<style>
+#program-table {
+  text-align: left;
+  padding: 5pt;
+  border: none;
+}
+.session-table {
+  padding:0pt;
+  border:none;
+}
+
+#program-table tr td, .session-table tr td {
+  border: none;
+  padding: 5pt;
+}
+
+.session-table p {
+  margin-bottom: 2px;
+}
+
+.session-table p:nth-child(1) {
+  font-style: italic;
+  pointer-events: none;
+}
+
+.session-table p:nth-child(2)::after {
+  content: " (Abstract)";
+  font-style: normal;
+  pointer-events: auto;
+  color: grey;
+}
+
+.session-table p:nth-child(2) {
+  margin-left: 10px;
+}
+
+#program-table tr td:nth-child(2) {
+  width: 100%;
+}
+#program-table tr td, .session-table tr td {
+  vertical-align: top;
+}
+</style>
 <center>
 <h1>2025 Midwest Programming Languages Summit</h1>
 </center>
@@ -45,7 +88,215 @@ talk/poster acceptance and grant awards
   *[register to attend](https://forms.gle/oKL5qQW4SiG2vaAA7)*.
 - **Saturday, December 13, 2025:** Meeting date.
 
-<!-- # Program   -->
+# Program  
+
+<table id="program-table">
+  <tr>
+    <td>8:00-9:00</td>
+    <td>(3-176 Keller Hall) <b>Registration Breakfast</b></td>
+  </tr>
+  <tr>
+    <td>9:00-9:00</td>
+    <td>(3-180 Keller Hall) <b>Welcome and opening Remarks</b></td>
+  </tr>
+  <tr>
+    <td>9:10-9:20</td>
+    <td>
+      (3-180 Keller Hall) <b>Some words from our corporate sponsors</b> (AWS, Galois, SIFT)
+    </td>
+  </tr>
+  <tr>
+    <td>10:20-10:50</td>
+    <td>
+      (3-180 Keller Hall) <b>Session 1 of contributed talks</b> (Chair: TBD)
+      <table class="session-table">
+        <tr>
+          <td>9:20-9:35</td>
+          <td>
+            <p>Structural Information Flow: A Fresh Look at Types for Non-interference</p>
+            <p>Hemant Gouni, Frank Pfenning, Jonathan Aldrich</p>
+          </td>
+        </tr>
+        <tr>
+          <td>9:35-9:50</td>
+          <td>
+            <p>A Flow-Sensitive Refinement Type System for Verifying eBPF Programs</p>
+            <p>Ameer Hamza, Lucas Zavalía, Arie Gurfinkel, Jorge A. Navas, Grigory Fedyukovich</p>
+          </td>
+        </tr>
+        <tr>
+          <td>9:50-10:05</td>
+          <td>
+            <p>Gradual Environment Classifiers</p>
+            <p>Tianyu Chen, Darshal Shetty, Jeremy G. Siek, Chao-Hong Chen, Weixi Ma, Arnaud Venet, Rocky Li</p>
+          </td>
+        </tr>
+        <tr>
+          <td>10:05-10:20</td>
+          <td>
+            <p>Ground stratified induction for the logic of definitions</p>
+            <p>Nathan Guermond, Gopalan Nadathur</p>
+          </td>
+        </tr>
+      </table>
+    </td>
+    <tr>
+      <td>10:20-10:50</td>
+      <td><b>Break</b> (refreshments provided outside to 3-180 Keller Hall)</td>
+    </tr>
+    <tr>
+      <td>10:50-11:50</td>
+      <td>
+        (3-180 Keller Hall): <b>Session 2 of contributed talks</b> (Chair: TBD)
+        <table class="session-table">
+          <tr>
+            <td>10:50-11:05</td>
+            <td>
+              <p>On the Relationship Between Environment Classifiers and Contextual Modal Types</p>
+              <p>Tianyu Chen</p>
+            </td>
+          </tr>
+          <tr>
+            <td>11:05-11:20</td>
+            <td>
+              <p>Checking &delta;-Satisfiability of Reals with Integrals</p>
+              <p>Cody Rivera, Bishnu Bhusal, Rohit Chadha, A. Prasad Sistla, Mahesh Viswanathan</p>
+            </td>
+          </tr>
+          <tr>
+            <td>11:20-11:35</td>
+            <td>
+              <p>A Relevance Sampler for μRustₛₗ</p>
+              <p>Breandan Considine</p>
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+  </tr>
+</table>
+
+<!--
+
+The main venue for MWPLS 2025 is Keller Hall: Registration will take place in Room 3-176 Keller Hall and the talks will be held in Room 3-180 Keller Hall. Lunch and the poster session will take place in the Beacon Room of the Rec Center, which is about a block (or 5 minutes walking distance) east of Keller Hall.
+
+The program for the summit is the following:
+
+8:00 - 9:00 (3-176 Keller Hall): Registration and breakfast
+
+9:00 - 9:10 (3-180 Keller Hall): Welcome and opening remarks 
+
+9:10 - 9:20 (3-180 Keller Hall):  Some words from our corporate sponsors (AWS, Galois, SIFT)
+
+9:20 - 10:20 (3-180 Keller Hall): Session 1 of contributed talks. Chair: TBD
+9:20 - 9:35: Structural Information Flow: A Fresh Look at Types for Non-interference
+Hemant Gouni, Frank Pfenning, Jonathan Aldrich (Abstract)
+
+9:35 - 9:50: A Flow-Sensitive Refinement Type System for Verifying eBPF Programs
+Ameer Hamza, Lucas Zavalía, Arie Gurfinkel, Jorge A. Navas, Grigory Fedyukovich (Abstract)
+
+9:50 - 10:05: Gradual Environment Classifiers
+Tianyu Chen, Darshal Shetty, Jeremy G. Siek, Chao-Hong Chen, Weixi Ma, Arnaud Venet, Rocky Li (Abstract)
+
+10:05 - 10:20: Ground stratified induction for the logic of definitions
+Nathan Guermond, Gopalan Nadathur (Abstract)
+
+10:20 - 10:50: Break (refreshments provided outside to 3-180 Keller Hall)
+
+10:50 - 11:50 (3-180 Keller Hall): Session 2 of contributed talks. Chair: TBD
+10:50 - 11:05: On the Relationship Between Environment Classifiers and Contextual
+                       Modal Types
+Tianyu Chen (Abstract)
+
+11:05 - 11:20: Checking δ-Satisfiability of Reals with Integrals
+            Cody Rivera, Bishnu Bhusal, Rohit Chadha, A. Prasad Sistla, Mahesh 
+Viswanathan
+
+11:20 - 11:35: A Relevance Sampler for μRustₛₗ
+Breandan Considine
+
+11:35 - 11:50: Abella/Forum: A Framework for Reasoning about Linear Logic
+ Specifications
+Terrance Gray, Thomas Tector, Gopalan Nadathur
+
+12:00 - 14:30: Lunch and Poster Session (Beacon Room, Rec Center)
+
+The following posters will be presented in the poster session:
+
+Colobus: AoS to SoA transformation of recursive tree-like ADTs
+Vidush Singhal (Abstract)
+
+Polygon: Symbolic Reasoning for SQL using Conflict-Driven Under-Approximation Search
+Pinhan Zhao (Abstract)
+
+Detecting Multi-Locale Anomalies in Chapel.
+Raneem Abu-Yosef, Thomas Huddleston, Kirshanthan Sundararajah, Martin Kong (Abstract)
+
+
+Towards Improved Subgoal Synthesis for Induction in SMT
+Kartik Sabharwal, Andrew Reynolds, Cesare Tinelli (Abstract)
+
+Towards Refinement Verification of Synchronous Programming with Automata 
+Jiawei Chen, Serra Dane, Jean-Baptiste Jeannin (Abstract)
+
+Automatic Certification of the Active Corner Method for Collision Avoidance
+Nishant Kheterpal (Abstract)
+
+Dependent-types for Python Libraries for Shape Analysis
+Arnav Jain and Sankha Guria (Abstract)
+
+Group Cohomology in Cubical Agda
+Kelton OBrien (Abstract)
+
+Biscotti: An Approach to Parallel Scheduling for Vectorized Encrypted Arithmetic Circuits
+Vedant Paranjape, Aman Gupta, Sreevickrant Sreekanth, Dulani Wijayarathne, Raghav Malik, Milind Kulkarni (Abstract)
+
+
+Ariadne: Discovering PBT Generator Weights with Dynamic Sampling
+Francille Zhuang (Abstract)
+
+
+Compiling Structured Operational Semantics to Executable OCaml Code
+Linglong Meng (Abstract)
+
+14:50 - 16:05 (3-180 Keller Hall): Session 3 of contributed talks. Chair: TBD
+14:50 - 15:05: Virtualizing Continuations 
+Cong Ma (Abstract)
+
+15:05 - 15:20: System FD: Towards making ad-hoc polymorphism even less
+ad-hoc
+Apoorv Ingle (Abstract)
+
+15:20 - 15:35: Code Style Sheets
+Sam Cohen and Ravi Chugh (Abstract)
+
+15:35 - 15:50: A Marriage of Scope Graphs and Reference Attribute Grammars
+Luke Bessant (Abstract)
+
+15:50 - 16:05: Flexible Efficient Memory Management and Compile-Time 
+Specialization via Context 
+Sam Estep and Joshua Sunshine (Abstract)
+
+16:05 - 16:35: Break (refreshments provided outside to 3-180 Keller Hall)
+
+16:35 - 17:35: (3-180 Keller Hall): Session 4 of contributed talks. Chair: TBD
+16:35 - 16:50: Quantum Assertion Testing Without Mid-Circuit Measurement: Strategies
+ and Lower Bounds
+Shengyuan Yang and Charles Yuan (Abstract)
+
+16:50 - 17:05: Safety Verification of Anytime Perception based Cyber-Physical Systems
+Lipsy Gupta and Pavithra Prabhakar (Abstract)
+
+17:05 - 17:20: Fluorite: A Calculus for SQL Queries With Ordering
+Jesse C. Slater, Xinyu Wang, Ryan Marcus, Max S. New (Abstract)
+
+17:20 - 17:35: Learning Short Clauses via Conditional Autarkies
+Amar Shah, Twain Byrnes, Joseph Reeves, Marijn Heule (Abstract)
+
+17:35 - 17:45: Closing remarks
+
+18:15 - 20:30: Dinner
+-->
 
 # Event Details
 
