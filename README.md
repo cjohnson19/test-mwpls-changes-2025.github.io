@@ -96,27 +96,23 @@ table tr {
 
 .session-table .abstract-wrapper .abstract-content {
   display: none;
-  position: absolute;
-  right: -80px;
-  bottom: 50%;
-  margin-bottom: 8px;
+  position: fixed;
   background-color: #ffffff;
   border: 1px solid #ddd;
   border-radius: 4px;
   padding: 12px 14px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
   z-index: 1000;
-  width: 500px;
-  max-width: calc(100vw - 40px);
+  width: auto;
+  min-width: 240px;
+  max-width: 520px;
+  max-width: min(520px, calc(100vw - 32px));
+  box-sizing: border-box;
   font-size: 0.9em;
   line-height: 1.5;
   text-align: left;
   white-space: normal;
   word-wrap: break-word;
-}
-
-.session-table .abstract-link:hover ~ .abstract-content {
-  display: block;
 }
 
 /* Responsive design */
@@ -837,3 +833,128 @@ Minneapolis and [SIFT: Smart Information Flow
   <a href="https://sift.net"><img src="sift.png" height="150"></a>
   </tr>
 </table>
+
+<script>
+(() => {
+  const EDGE_PADDING = 16;
+  const GAP = 10;
+  const MAX_WIDTH = 520;
+  const MIN_WIDTH = 240;
+
+  const clamp = (value, min, max) => (max < min ? min : Math.min(Math.max(value, min), max));
+
+  const positionAbstractTooltip = (link, content) => {
+    const { clientWidth, clientHeight } = document.documentElement;
+    const linkRect = link.getBoundingClientRect();
+    const availableWidth = Math.max(160, clientWidth - EDGE_PADDING * 2);
+    const maxWidth = Math.min(MAX_WIDTH, availableWidth);
+    const minWidth = Math.min(MIN_WIDTH, maxWidth);
+
+    let width = maxWidth;
+
+    Object.assign(content.style, {
+      position: 'fixed',
+      display: 'block',
+      visibility: 'hidden',
+      width: `${width}px`,
+      maxWidth: `${maxWidth}px`,
+      minWidth: `${minWidth}px`,
+      maxHeight: '',
+      overflowY: '',
+      left: `${EDGE_PADDING}px`,
+      top: `${EDGE_PADDING}px`,
+      right: '',
+      bottom: ''
+    });
+
+    let height = content.getBoundingClientRect().height;
+    let left = clamp(linkRect.left + linkRect.width / 2 - width / 2, EDGE_PADDING, clientWidth - EDGE_PADDING - width);
+    const availableToRight = clientWidth - EDGE_PADDING - left;
+    if (width > availableToRight) {
+      width = Math.max(minWidth, availableToRight);
+      content.style.width = `${width}px`;
+      height = content.getBoundingClientRect().height;
+      left = clamp(linkRect.left + linkRect.width / 2 - width / 2, EDGE_PADDING, clientWidth - EDGE_PADDING - width);
+    }
+
+    const spaceBelow = clientHeight - (linkRect.bottom + GAP) - EDGE_PADDING;
+    const spaceAbove = linkRect.top - GAP - EDGE_PADDING;
+    const fitsBelow = height <= spaceBelow;
+    const fitsAbove = height <= spaceAbove;
+    const placement = fitsBelow || (!fitsAbove && spaceBelow >= spaceAbove) ? 'below' : 'above';
+
+    let allowedHeight = placement === 'below' ? spaceBelow : spaceAbove;
+    if (height > allowedHeight) {
+      allowedHeight = Math.max(100, allowedHeight);
+      content.style.maxHeight = `${allowedHeight}px`;
+      content.style.overflowY = 'auto';
+      height = content.getBoundingClientRect().height;
+    }
+
+    const top = placement === 'below'
+      ? clamp(linkRect.bottom + GAP, EDGE_PADDING, clientHeight - EDGE_PADDING - height)
+      : clamp(linkRect.top - GAP - height, EDGE_PADDING, clientHeight - EDGE_PADDING - height);
+
+    Object.assign(content.style, {
+      left: `${left}px`,
+      top: `${top}px`,
+      visibility: 'visible'
+    });
+  };
+
+  const resetTooltip = content => {
+    Object.assign(content.style, {
+      display: 'none',
+      visibility: '',
+      width: '',
+      maxWidth: '',
+      minWidth: '',
+      left: '',
+      top: '',
+      maxHeight: '',
+      overflowY: ''
+    });
+  };
+  
+  document.addEventListener('DOMContentLoaded', () => {
+    const abstractLinks = Array.from(document.querySelectorAll('.session-table .abstract-link'));
+    
+    abstractLinks.forEach(link => {
+      const content = link.closest('.abstract-wrapper')?.querySelector('.abstract-content');
+      if (!content) return;
+
+      let hideTimeout;
+      
+      const showTooltip = () => {
+        if (hideTimeout) {
+          clearTimeout(hideTimeout);
+          hideTimeout = null;
+        }
+        positionAbstractTooltip(link, content);
+      };
+      
+      const hideTooltip = () => {
+        hideTimeout = setTimeout(() => resetTooltip(content), 40);
+      };
+      
+      link.addEventListener('mouseenter', showTooltip);
+      content.addEventListener('mouseenter', showTooltip);
+      link.addEventListener('mouseleave', hideTooltip);
+      content.addEventListener('mouseleave', hideTooltip);
+    });
+    
+    let resizeTimeout;
+    window.addEventListener('resize', () => {
+      clearTimeout(resizeTimeout);
+      resizeTimeout = setTimeout(() => {
+        document.querySelectorAll('.session-table .abstract-link').forEach(link => {
+          const content = link.closest('.abstract-wrapper')?.querySelector('.abstract-content');
+          if (content && content.style.display === 'block') {
+            positionAbstractTooltip(link, content);
+          }
+        });
+      }, 100);
+    });
+  });
+})();
+</script>
