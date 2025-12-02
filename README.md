@@ -1,49 +1,118 @@
 <style>
 #program-table {
   text-align: left;
-  padding: 5pt;
+  padding: 0;
   border: none;
+  margin: 20px auto;
+  max-width: 100%;
+  font-size: 0.95em;
+  overflow: hidden;
 }
 
-table tr:nth-child(2n) {
+table tr {
   background-color: transparent !important;
 }
 
-.session-table {
-  padding:0pt;
-  border:none;
+#program-table > tbody > tr > td:first-child {
+  font-weight: 600;
+  white-space: nowrap;
+  vertical-align: top;
+  padding: 15px 20px;
+  min-width: 100px;
+  background-color: #f8f9fa;
+  border-right: 2px solid #e8e8e8;
 }
 
-#program-table tr td, .session-table tr td {
+.session-table {
+  padding: 0;
   border: none;
-  padding: 5pt;
+  margin: 10px 0 5px 0;
+  width: 100%;
+}
+
+.session-table tr {
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.session-table tr:last-child {
+  border-bottom: none;
+}
+
+.session-table td {
+  border: none;
+  padding: 8px 12px;
+  vertical-align: top;
+}
+
+.session-table td:first-child {
+  font-weight: 500;
+  color: #555;
+  white-space: nowrap;
+  min-width: 100px;
+  padding-right: 15px;
+}
+
+.session-table td:last-child {
+  padding-left: 0;
 }
 
 .session-table p {
-  margin-bottom: 2px;
+  margin-bottom: 4px;
+  line-height: 1.5;
 }
 
 .session-table p:nth-child(1) {
   font-style: italic;
   pointer-events: none;
+  color: #333;
+  font-weight: 500;
+}
+
+.session-table p:nth-child(2) {
+  margin-left: 0;
+  color: #666;
+  font-size: 0.9em;
 }
 
 .session-table p:nth-child(2)::after {
   content: " (Abstract)";
   font-style: normal;
   pointer-events: auto;
-  color: grey;
+  color: #999;
+  font-size: 0.85em;
 }
 
-.session-table p:nth-child(2) {
-  margin-left: 10px;
+/* Bold session headers and breaks */
+#program-table > tbody > tr > td:last-child b {
+  color: #2c3e50;
+  font-size: 1.05em;
 }
 
-#program-table tr td:nth-child(2) {
-  width: 100%;
+/* Responsive design */
+@media screen and (max-width: 768px) {
+  #program-table {
+    font-size: 0.85em;
+  }
+  
+  #program-table > tbody > tr > td:first-child {
+    min-width: 100px;
+    padding: 12px 15px;
+    font-size: 0.9em;
+  }
+  
+  #program-table > tbody > tr > td:last-child {
+    padding: 12px 15px;
+  }
+  
+  .session-table td:first-child {
+    min-width: 80px;
+    font-size: 0.9em;
+  }
 }
-#program-table tr td, .session-table tr td {
-  vertical-align: top;
+
+/* Improve spacing and typography */
+#program-table > tbody > tr > td:last-child p {
+  margin-bottom: 8px;
 }
 </style>
 <center>
@@ -159,7 +228,7 @@ Hall.
   <tr>
     <td>10:50-11:50</td>
     <td>
-      (3-180 Keller Hall): <b>Session 2 of contributed talks</b> (Chair: TBD)
+      (3-180 Keller Hall) <b>Session 2 of contributed talks</b> (Chair: TBD)
       <table class="session-table">
         <tr>
           <td>10:50-11:05</td>
