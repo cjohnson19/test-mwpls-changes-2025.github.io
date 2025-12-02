@@ -198,7 +198,7 @@ Hall.
 <table id="program-table">
   <tr>
     <td>8:00-9:00</td>
-    <td>(3-176 Keller Hall) <b>Registration and Breakfast</b></td>
+    <td>(3-176 Keller Hall) <b>Registration and breakfast</b></td>
   </tr>
   <tr>
     <td>9:00-9:10</td>
