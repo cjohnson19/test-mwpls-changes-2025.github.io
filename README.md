@@ -33,6 +33,7 @@ table tr {
 
 .session-table tr {
   border-bottom: 1px solid #f0f0f0;
+  border-top: none !important;
 }
 
 .session-table tr:last-child {
