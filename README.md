@@ -40,7 +40,7 @@ table tr {
 }
 
 .session-table td {
-  border: none;
+  border: none !important;
   padding: 8px 12px;
   vertical-align: top;
 }
