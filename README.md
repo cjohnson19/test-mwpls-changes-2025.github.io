@@ -115,7 +115,6 @@ table tr {
   word-wrap: break-word;
 }
 
-/* Responsive design */
 @media screen and (max-width: 768px) {
   #program-table {
     font-size: 0.85em;
@@ -137,7 +136,6 @@ table tr {
   }
 }
 
-/* Improve spacing and typography */
 #program-table > tbody > tr > td:last-child p {
   margin-bottom: 8px;
 }
@@ -200,7 +198,7 @@ Hall.
 <table id="program-table">
   <tr>
     <td>8:00-9:00</td>
-    <td>(3-176 Keller Hall) <b>Registration Breakfast</b></td>
+    <td>(3-176 Keller Hall) <b>Registration and Breakfast</b></td>
   </tr>
   <tr>
     <td>9:00-9:10</td>
