@@ -58,6 +58,22 @@ table tr {
   padding-left: 0;
 }
 
+.poster-list {
+  display: flex;
+  flex-direction: column;
+  padding-left: 15px;
+}
+
+.poster-list .poster-item {
+  padding: 8px 0;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.poster-list .poster-item:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
 .session-table p {
   margin-bottom: 4px;
   line-height: 1.5;
@@ -360,193 +376,157 @@ Hall.
     <td>
       (Beacon Room, Rec Center) <b>Lunch and Poster Session</b>
       <p>The following posters will be presented in the poster session:</p>
-      <table class="session-table">
-        <tr>
-          <td>&nbsp;</td>
-          <td>
-            <p>Colobus: AoS to SoA transformation of recursive tree-like ADTs</p>
-            <p>
-              Vidush Singhal
-              <span class="abstract-wrapper">
-                <span class="abstract-link">(Abstract)</span>
-                <span class="abstract-content">
+      <div class="session-table poster-list">
+        <div class="poster-item">
+          <p>Colobus: AoS to SoA transformation of recursive tree-like ADTs</p>
+          <p>
+            Vidush Singhal
+            <span class="abstract-wrapper">
+              <span class="abstract-link">(Abstract)</span>
+              <span class="abstract-content">
                   Algebraic data types are a language feature available in many functional programming languages like Haskell. They make it easier for programmers to define and work with complex data types. However, the performance of such programs depends on various factors, among which we are mainly interested in data layout.<br><br>
                   Gibbon is a compiler that supports a small language of tree traversals written in a subset of Haskell. It transforms programs that perform traversals on tree-like ADTs into corresponding traversals over the serialized representation of the ADT. This transformation enhances spatial locality, resulting in improved runtime performance.<br><br>
                   We take this data representation a step further by allowing such ADTs to be represented in either an array of structs (AoS) or a struct of arrays (SoA) serialization format. The structure-of-arrays layout can enable performance-critical optimizations such as vectorization over irregular, tree-like recursive data types, and it allows recursive traversals to be transformed into iterative loops.<br><br>
                   We build our tool on top of the Gibbon compiler, and for a subset of programs, the SoA transformation performs better due to improved locality. Preliminary results show that for certain reduction-like programs, we observe approximately a 2× speedup compared to baseline Gibbon.
-                </span>
               </span>
-            </p>
-          </td>
-        </tr>
-        <tr>
-          <td>&nbsp;</td>
-          <td>
-            <p>Polygon: Symbolic Reasoning for SQL using Conflict-Driven Under-Approximation Search</p>
-            <p>
-              Pinhan Zhao
-              <span class="abstract-wrapper">
-                <span class="abstract-link">(Abstract)</span>
-                <span class="abstract-content">
+            </span>
+          </p>
+        </div>
+        <div class="poster-item">
+          <p>Polygon: Symbolic Reasoning for SQL using Conflict-Driven Under-Approximation Search</p>
+          <p>
+            Pinhan Zhao
+            <span class="abstract-wrapper">
+              <span class="abstract-link">(Abstract)</span>
+              <span class="abstract-content">
                   We present a novel symbolic reasoning engine for SQL which can efficiently generate an input I for n queries P₁, ..., Pₙ, such that their outputs on I satisfy a given property (expressed in SMT). This is useful in different contexts, such as disproving equivalence of two SQL queries and disambiguating a set of queries. Our first idea is to reason about an under-approximation of each Pᵢ -- that is, a subset of Pᵢ's input-output behaviors. While it makes our approach both semantics-aware and lightweight, this idea alone is incomplete (as a fixed under-approximation might miss some behaviors of interest). Therefore, our second idea is to perform search over an expressive family of under-approximations (which collectively cover all program behaviors of interest), thereby making our approach complete. We have implemented these ideas in a tool, Polygon, and evaluated it on over 30,000 benchmarks across two tasks (namely, SQL equivalence refutation and query disambiguation). Our evaluation results show that Polygon significantly outperforms all prior techniques.
-                </span>
               </span>
-            </p>
-          </td>
-        </tr>
-        <tr>
-          <td>&nbsp;</td>
-          <td>
-            <p>Detecting Multi-Locale Anomalies in Chapel.</p>
-            <p>
-              Raneem Abu-Yosef, Thomas Huddleston, Kirshanthan Sundararajah, Martin Kong
-              <span class="abstract-wrapper">
-                <span class="abstract-link">(Abstract)</span>
-                <span class="abstract-content">
+            </span>
+          </p>
+        </div>
+        <div class="poster-item">
+          <p>Detecting Multi-Locale Anomalies in Chapel.</p>
+          <p>
+            Raneem Abu-Yosef, Thomas Huddleston, Kirshanthan Sundararajah, Martin Kong
+            <span class="abstract-wrapper">
+              <span class="abstract-link">(Abstract)</span>
+              <span class="abstract-content">
                   The Partitioned Global Address Space (PGAS) execution model is a promising competing model to MPI. PGAS implementations offer several programmability advantages over their MPI counterparts while preserving the appeal of high-performance communication libraries. Among existing PGAS instances, the Chapel compiler and programming language is one of the most robust and well-supported implementations. Being around for nearly two decades, Chapel has evolved into a mature PGAS implementation, with several compiler and run-time features. As a result of these advances, several scientific libraries and applications have been written in Chapel. These include graph libraries, Finite Difference stencils, and Computational Fluid Dynamics (CFD), among many others. Unfortunately, despite these advances, the error detection support in Chapel has been largely ignored. In this work, we propose new static analyses to detect various distributed, multi-locale anomalies in Chapel programs. We leverage constraint formulae that model Chapel semantics together with anomaly-specific constraints that encapsulate triggering conditions of the anomaly. Generated models are then checked with Z3 SMT solver to decide the existence of anomalies. We demonstrate the effectiveness of our analyses on well-known scientific operators and communication patterns, comparing against native Chapel analyses and MPI debugging tools targeting lowered Chapel code.
-                </span>
               </span>
-            </p>
-          </td>
-        </tr>
-        <tr>
-          <td>&nbsp;</td>
-          <td>
-            <p>Towards Improved Subgoal Synthesis for Induction in SMT</p>
-            <p>
-              Kartik Sabharwal, Andrew Reynolds, Cesare Tinelli
-              <span class="abstract-wrapper">
-                <span class="abstract-link">(Abstract)</span>
-                <span class="abstract-content">
+            </span>
+          </p>
+        </div>
+        <div class="poster-item">
+          <p>Towards Improved Subgoal Synthesis for Induction in SMT</p>
+          <p>
+            Kartik Sabharwal, Andrew Reynolds, Cesare Tinelli
+            <span class="abstract-wrapper">
+              <span class="abstract-link">(Abstract)</span>
+              <span class="abstract-content">
                   The SMT solver cvc5 hosts a suite of features for reasoning about functions defined over algebraic datatypes: quantifier instantiation procedures, finite model finding, structural induction, and syntax-directed enumerative subgoal synthesis. I will describe an approach to expand this suite with a conflict-directed subgoal synthesizer inspired by recent work in E-graph guided lemma discovery. The new conflict-directed synthesizer is intended to complement the heavy hammer of enumerative subgoal synthesis. It searches for a subgoal that conflicts with (refutes) a class of countermodels under consideration by the solver. The solver halts with a decision if and when all possible countermodels have been refuted. We have implemented our approach to conflict-directed synthesis in a new quantifiers module for cvc5. Our implementation currently performs better than syntax-directed enumerative subgoal synthesis on a suite of 311 benchmarks.
-                </span>
               </span>
-            </p>
-          </td>
-        </tr>
-        <tr>
-          <td>&nbsp;</td>
-          <td>
-            <p>Towards Refinement Verification of Synchronous Programming with Automata</p>
-            <p>
-              Jiawei Chen, Serra Dane, Jean-Baptiste Jeannin
-              <span class="abstract-wrapper">
-                <span class="abstract-link">(Abstract)</span>
-                <span class="abstract-content">
+            </span>
+          </p>
+        </div>
+        <div class="poster-item">
+          <p>Towards Refinement Verification of Synchronous Programming with Automata</p>
+          <p>
+            Jiawei Chen, Serra Dane, Jean-Baptiste Jeannin
+            <span class="abstract-wrapper">
+              <span class="abstract-link">(Abstract)</span>
+              <span class="abstract-content">
                   Synchronous programming languages like Lustre and Esterel have a proven track record in industry for modeling complex cyber-physical systems (CPS) like avionics or industrial controllers. This is in part due to properties like the absence of deadlocks or causality which are easily checked statically or enforced by construction, which are also useful properties for real-world CPS to have. Additionally, the compilation and scheduling of synchronous programs has been extensively studied, making them reliably executable on real hardware.<br><br>
                   Verifying a synchronous programming language via the type system has been explored in existing work "Synchronous Programming with Refinement Types.", which presented a refinement type system for the synchronous programming language Zélus using a rewrite-based semantics. While the type system presented there is able to verify a subset of the synchronous kernel sufficient to control real-world hardware, its small-step semantic model does not fully support in a generalized way the equational semantics that underpin some core features of Zélus like hierarchical state machines and mutually recursive definitions. In general, the semantics is limited to only expressions that directly produce values, which is not the case for equational definitions in Zélus. Automata are an essential construct in Zélus for implementing more complex decision-making in discrete-time programs, and for the eventual implementation of hybrid automata which are a unique strength of Zélus's modeling and simulation capabilities. Similarly, generalized mutual recursion, while challenging for verification, allows one to write more expressive concurrent stream programs that more accurately model the interconnected components of a real system. To address this challenge, we introduce a state-based semantics and a new judgment system that can explicitly account for the evolving state of mutually recursive definitions and automata across time. This lets us extend refinement-based verification beyond simple expression-level kernels to the richer equational and automaton constructs that are needed to model realistic CPS controllers in Zélus.
-                </span>
               </span>
-            </p>
-          </td>
-        </tr>
-        <tr>
-          <td>&nbsp;</td>
-          <td>
-            <p>Automatic Certification of the Active Corner Method for Collision Avoidance</p>
-            <p>
-              Nishant Kheterpal
-              <span class="abstract-wrapper">
-                <span class="abstract-link">(Abstract)</span>
-                <span class="abstract-content">
+            </span>
+          </p>
+        </div>
+        <div class="poster-item">
+          <p>Automatic Certification of the Active Corner Method for Collision Avoidance</p>
+          <p>
+            Nishant Kheterpal
+            <span class="abstract-wrapper">
+              <span class="abstract-link">(Abstract)</span>
+              <span class="abstract-content">
                   Formal methods are particularly useful to guarantee safety before deployment in safety-critical tasks. Ensuring absence of collision for vehicles such as airplanes, cars, or robots is one common application of formal verification. However, many methods for verifying collision avoidance model a vehicle as a moving point mass, though the real vehicles have non-zero area. Our past work proposed a novel algorithm (the active corner method) for verifying collision avoidance for polygonal objects moving in the plane, along with a Python implementation. That implementation was not verified or certified, relying instead on a pen-and-paper proof of correctness. In this work, we describe an extension of the active corner method to automatically generate machine-checkable proof certificates of correctness for specific instances within the Prototype Verification System (PVS). This work briefly discusses the original active corner method proof approach, presents a novel algebraic approach that generalizes to any convex polygon, details the certification process with examples in PVS, and provides a case study using the differential dynamic logic integration within PVS.
-                </span>
               </span>
-            </p>
-          </td>
-        </tr>
-        <tr>
-          <td>&nbsp;</td>
-          <td>
-            <p>Dependent-types for Python Libraries for Shape Analysis</p>
-            <p>
-              Arnav Jain and Sankha Guria
-              <span class="abstract-wrapper">
-                <span class="abstract-link">(Abstract)</span>
-                <span class="abstract-content">
+            </span>
+          </p>
+        </div>
+        <div class="poster-item">
+          <p>Dependent-types for Python Libraries for Shape Analysis</p>
+          <p>
+            Arnav Jain and Sankha Guria
+            <span class="abstract-wrapper">
+              <span class="abstract-link">(Abstract)</span>
+              <span class="abstract-content">
                   Tensor libraries like NumPy are essential tools for programmers, enabling the efficient representation and manipulation of massive datasets. Although NumPy streamlines array processing, it abstracts away the implementation details of tensor operations, leaving the user responsible for ensuring that tensor shapes are compatible. This dependency on shape compatibility makes NumPy code highly susceptible to run-time errors that standard type checkers, such as MyPy or PyRight, are unable to detect because they are shape-unaware. In this work, we introduce a novel dependent type system for tensor operations, designed to detect shape errors statically. The key design decision in our system is to use dependent types to check application code but not verify the NumPy implementation itself. This allows us to write expressive type signatures that can do symbolic manipulation to verify arbitrary tensor shapes. We implement our system as MyPy plugin, giving it access to type check the entire Python ecosystem. We evaluate our system on an open-source machine learning project that relies on NumPy operations, including broadcasting, matrix multiplication, reshape, and slicing, demonstrating its effectiveness in a real-world context. In summary, we believe this shape-aware type system represents an important step forward in ensuring the robustness and correctness of code using tensor libraries like NumPy.
-                </span>
               </span>
-            </p>
-          </td>
-        </tr>
-        <tr>
-          <td>&nbsp;</td>
-          <td>
-            <p>Group Cohomology in Cubical Agda</p>
-            <p>
-              Kelton OBrien
-              <span class="abstract-wrapper">
-                <span class="abstract-link">(Abstract)</span>
-                <span class="abstract-content">
+            </span>
+          </p>
+        </div>
+        <div class="poster-item">
+          <p>Group Cohomology in Cubical Agda</p>
+          <p>
+            Kelton OBrien
+            <span class="abstract-wrapper">
+              <span class="abstract-link">(Abstract)</span>
+              <span class="abstract-content">
                   Homotopy type theory is an extension of dependent type theory that allows the interpretation of types as spaces, elements of types as points in that space, and equalities as paths. This made synthetic mechanizations of algebraic topology and related subjects such as homological algebra possible for the first time. Group cohomology is a foundational concept in the field of homological algebra, but this notion has not been mechanized in a homotopy type theory based proof assistant, preventing the computer verification of large swathes of homological algebra. We provide a mechanization of the first cellular model of the delooping of any finite group in Cubical Agda. We use this cellular delooping to formalize the notion of the cohomology groups of a finite group, and allow for their computation in a proof assistant for the first time, as well as synthetically mechanizing several important lemmas in algebraic topology in a proof assistant for the first time.
-                </span>
               </span>
-            </p>
-          </td>
-        </tr>
-        <tr>
-          <td>&nbsp;</td>
-          <td>
-            <p>Biscotti: An Approach to Parallel Scheduling for Vectorized Encrypted Arithmetic Circuits</p>
-            <p>
-              Vedant Paranjape, Aman Gupta, Sreevickrant Sreekanth, Dulani Wijayarathne, Raghav Malik, Milind Kulkarni
-              <span class="abstract-wrapper">
-                <span class="abstract-link">(Abstract)</span>
-                <span class="abstract-content">
+            </span>
+          </p>
+        </div>
+        <div class="poster-item">
+          <p>Biscotti: An Approach to Parallel Scheduling for Vectorized Encrypted Arithmetic Circuits</p>
+          <p>
+            Vedant Paranjape, Aman Gupta, Sreevickrant Sreekanth, Dulani Wijayarathne, Raghav Malik, Milind Kulkarni
+            <span class="abstract-wrapper">
+              <span class="abstract-link">(Abstract)</span>
+              <span class="abstract-content">
                   Fully Homomorphic Encryption (FHE) enables secure computation on encrypted data, ensuring privacy in various applications. However, FHE's practicality is constrained by the substantial overhead of encrypted computation. This overhead can be partially mitigated by using vectorization strategies to optimize FHE computations. The unique semantics of FHE computations make vectorizing arbitrary applications challenging, so recent research (e.g. Coyote [1] and Porcupine [2]) focuses on applying synthesis-based techniques, which have the drawback of failing to scale well to vectorizing large programs. We propose Biscotti, an FHE vectorizer that targets "divide-and-conquer" parallelism in recursive programs. Biscotti identifies smaller subproblems that can be vectorized independently using off-the-shelf synthesis based approaches, and then uses a novel algorithm to combine these into a vector schedule for the full program. We demonstrate on a variety of common benchmarks that Biscotti's approach not only improves compilation times, but also results in more efficient schedules overall.
-                </span>
               </span>
-            </p>
-          </td>
-        </tr>
-        <tr>
-          <td>&nbsp;</td>
-          <td>
-            <p>Ariadne: Discovering PBT Generator Weights with Dynamic Sampling</p>
-            <p>
-              Francille Zhuang
-              <span class="abstract-wrapper">
-                <span class="abstract-link">(Abstract)</span>
-                <span class="abstract-content">
+            </span>
+          </p>
+        </div>
+        <div class="poster-item">
+          <p>Ariadne: Discovering PBT Generator Weights with Dynamic Sampling</p>
+          <p>
+            Francille Zhuang
+            <span class="abstract-wrapper">
+              <span class="abstract-link">(Abstract)</span>
+              <span class="abstract-content">
                   Property Based Testing (PBT) is a popular automated testing methodology that uses thousands of randomly generated inputs to probe a program's behavior. PBT frameworks create these inputs using input generators, functions that non-deterministically sample from the input space of the program under test. To be effective, input generators must produce representative samples of the inputs of interest. However, manually adjusting the distribution of a generator is a tedious and error prone task.<br><br>
                   This work introduces a technique for automatically tuning an input generator to better align with a specified target distribution. The proposed technique stochastically modifies the generator, by using dynamic sampling to estimate how closely its outputs align with the target distribution. Compared to prior work, our proposed approach supports richer classes of target distributions and input generators. As one example, our approach can automatically tune a red black search tree generator to produce trees with uniformly distributed heights. In addition, our approach can ensure that a generator produces values that satisfy a disjoint set of predicates. We have realized our technique in a tool called Ariadne; our experiments show that Ariadne can automatically adjust generators for a diverse set of data types so that they produce samples that align with a variety of semantically rich target distributions.
-                </span>
               </span>
-            </p>
-          </td>
-        </tr>
-        <tr>
-          <td>&nbsp;</td>
-          <td>
-            <p>Compiling Structured Operational Semantics to Executable OCaml Code</p>
-            <p>
-              Linglong Meng
-              <span class="abstract-wrapper">
-                <span class="abstract-link">(Abstract)</span>
-                <span class="abstract-content">
+            </span>
+          </p>
+        </div>
+        <div class="poster-item">
+          <p>Compiling Structured Operational Semantics to Executable OCaml Code</p>
+          <p>
+            Linglong Meng
+            <span class="abstract-wrapper">
+              <span class="abstract-link">(Abstract)</span>
+              <span class="abstract-content">
                   Structured Operational Semantics (SOS) translates naturally to logic programming languages like Prolog, which support backtracking, nondeterministic rule selection and unification. Functional languages like OCaml, however, require deterministic pattern matching, making direct SOS translation challenging. We demonstrate our approach with an imperative language (IMP) featuring arithmetic and boolean expressions, variable assignment, control flow, and loops. The same SOS specification generates both executable Prolog and OCaml implementations, showing that carefully designed semantics can target both logic and functional paradigms.
-                </span>
               </span>
-            </p>
-          </td>
-        </tr>
-        <tr>
-          <td>&nbsp;</td>
-          <td>
-            <p>Encoding Occurrence Typing in Rocq</p>
-            <p>
-              Sujin Woo and Sam Tobin-Hochstadt
-              <span class="abstract-wrapper">
-                <span class="abstract-link">(Abstract)</span>
-                <span class="abstract-content">
+            </span>
+          </p>
+        </div>
+        <div class="poster-item">
+          <p>Encoding Occurrence Typing in Rocq</p>
+          <p>
+            Sujin Woo and Sam Tobin-Hochstadt
+            <span class="abstract-wrapper">
+              <span class="abstract-link">(Abstract)</span>
+              <span class="abstract-content">
                   We present an embedding of Typed Racket in Rocq, demonstrating that occurrence typing can be directly encoded using full-spectrum dependent types. Occurrence typing uses propositions based on the evaluation of a predicate to narrow the type of a given variable. Central to our encoding are Rocq's subset types and Program tactic, which allow us to pass derived propositions carrying type information alongside variables to model occurrence typing. To make our embedded programs resemble Typed Racket programs, we define notations to bring the syntax of the language closer to Typed Racket, and tactics automate away trivial obligations produced by definitions. We show that our embedding can express examples of occurrence typing in the literature, including Guo and Greenman's recent if-T benchmark programs.
-                </span>
               </span>
-            </p>
-          </td>
-        </tr>
-      </table>
+            </span>
+          </p>
+        </div>
+      </div>
     </td>
   </tr>
   <tr>
@@ -832,7 +812,6 @@ Minneapolis and [SIFT: Smart Information Flow
   </tr>
 </table>
 
-<!-- Minified JS to position abstracts relative to the window -->
-<script>
-(()=>{const t=16,e=(t,e,i)=>i<e?e:Math.min(Math.max(t,e),i),i=(i,o)=>{const{clientWidth:n,clientHeight:l}=document.documentElement,s=i.getBoundingClientRect(),a=Math.max(160,n-32),c=Math.min(520,a),d=Math.min(240,c);let r=c;Object.assign(o.style,{position:"fixed",display:"block",visibility:"hidden",width:`${r}px`,maxWidth:`${c}px`,minWidth:`${d}px`,maxHeight:"",overflowY:"",left:"16px",top:"16px",right:"",bottom:""});let m=o.getBoundingClientRect().height,h=e(s.left+s.width/2-r/2,t,n-t-r);const b=n-t-h;r>b&&(r=Math.max(d,b),o.style.width=`${r}px`,m=o.getBoundingClientRect().height,h=e(s.left+s.width/2-r/2,t,n-t-r));const u=l-(s.bottom+10)-t,p=s.top-10-t,g=m<=u||!(m<=p)&&u>=p?"below":"above";let x="below"===g?u:p;m>x&&(x=Math.max(100,x),o.style.maxHeight=`${x}px`,o.style.overflowY="auto",m=o.getBoundingClientRect().height);const y=e("below"===g?s.bottom+10:s.top-10-m,t,l-t-m);Object.assign(o.style,{left:`${h}px`,top:`${y}px`,visibility:"visible"})};document.addEventListener("DOMContentLoaded",(()=>{let t;Array.from(document.querySelectorAll(".session-table .abstract-link")).forEach((t=>{const e=t.closest(".abstract-wrapper")?.querySelector(".abstract-content");if(!e)return;let o;const n=()=>{o&&(clearTimeout(o),o=null),i(t,e)},l=()=>{o=setTimeout((()=>(t=>{Object.assign(t.style,{display:"none",visibility:"",width:"",maxWidth:"",minWidth:"",left:"",top:"",maxHeight:"",overflowY:""})})(e)),40)};t.addEventListener("mouseenter",n),e.addEventListener("mouseenter",n),t.addEventListener("mouseleave",l),e.addEventListener("mouseleave",l)})),window.addEventListener("resize",(()=>{clearTimeout(t),t=setTimeout((()=>{document.querySelectorAll(".session-table .abstract-link").forEach((t=>{const e=t.closest(".abstract-wrapper")?.querySelector(".abstract-content");e&&"block"===e.style.display&&i(t,e)}))}),100)}))}))})();
+<!-- code to position abstracts -->
+<script>(()=>{const t=16,e=(t,e,n)=>n<e?e:Math.min(Math.max(t,e),n);let n=null;const i=(n,i)=>{const{clientWidth:o,clientHeight:l}=document.documentElement,s=n.getBoundingClientRect(),a=Math.max(160,o-32),c=Math.min(520,a),d=Math.min(240,c);let r=c;Object.assign(i.style,{position:"fixed",display:"block",visibility:"hidden",width:`${r}px`,maxWidth:`${c}px`,minWidth:`${d}px`,maxHeight:"",overflowY:"",left:"16px",top:"16px",right:"",bottom:""});let h=i.getBoundingClientRect().height,m=e(s.left+s.width/2-r/2,t,o-t-r);const p=o-t-m;r>p&&(r=Math.max(d,p),i.style.width=`${r}px`,h=i.getBoundingClientRect().height,m=e(s.left+s.width/2-r/2,t,o-t-r));const u=l-(s.bottom+10)-t,b=s.top-10-t,g=h<=u||!(h<=b)&&u>=b?"below":"above";let y="below"===g?u:b;h>y&&(y=Math.max(100,y),i.style.maxHeight=`${y}px`,i.style.overflowY="auto",h=i.getBoundingClientRect().height);const v=e("below"===g?s.bottom+10:s.top-10-h,t,l-t-h);Object.assign(i.style,{left:`${m}px`,top:`${v}px`,visibility:"visible"})},o=t=>{t&&(Object.assign(t.style,{display:"none",visibility:"",width:"",maxWidth:"",minWidth:"",left:"",top:"",maxHeight:"",overflowY:""}),n===t&&(n=null))};document.addEventListener("DOMContentLoaded",(()=>{const t=[];let e;Array.from(document.querySelectorAll(".session-table .abstract-link")).forEach((e=>{const l=e.closest(".abstract-wrapper")?.querySelector(".abstract-content");if(!l)return;let s;t.push({link:e,content:l});const a=()=>{s&&(clearTimeout(s),s=null),i(e,l)},c=()=>{s=setTimeout((()=>o(l)),40)};e.addEventListener("mouseenter",a),l.addEventListener("mouseenter",a),e.addEventListener("mouseleave",c),l.addEventListener("mouseleave",c),e.addEventListener("pointerdown",(t=>{"touch"===t.pointerType&&(t.preventDefault(),t.stopPropagation(),clearTimeout(s),s=null,n&&n!==l&&o(n),"block"===l.style.display?o(l):(i(e,l),n=l))}))})),document.addEventListener("pointerdown",(t=>{if("touch"!==t.pointerType)return;const e=t.target;e.closest(".abstract-wrapper")||e.closest(".abstract-content")||o(n)})),window.addEventListener("resize",(()=>{clearTimeout(e),e=setTimeout((()=>{t.forEach((({link:t,content:e})=>{"block"===e.style.display&&i(t,e)}))}),100)}))}))})();
 </script>
