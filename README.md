@@ -205,11 +205,15 @@ talk/poster acceptance and grant awards
 
 # Program  
 
-The main venue for MWPLS 2025 is Keller Hall: Registration will take place in
-Room 3-176 Keller Hall and the talks will be held in Room 3-180 Keller Hall.
-Lunch and the poster session will take place in the Beacon Room of the Rec
-Center, which is about a block (or 5 minutes walking distance) east of Keller
-Hall.
+The main venue for MWPLS 2025 is [Keller
+Hall](https://campusmaps.umn.edu/kenneth-h-keller-hall) at the
+University of Minnesota. Registration will take place in Room 3-176
+Keller Hall and the talks will be held in Room 3-180 Keller Hall.
+Lunch and the poster session will take place in the Beacon Room of the
+[University Recreation and Wellness
+Center](https://campusmaps.umn.edu/university-recreation-and-wellness-center),
+which is about a block (or 5 minutes walking distance) east of Keller
+Hall. Dinner will be an informal, buy-your-own affair, but we intend to organize a collective expedition to one of the local food and drinks halls (like [The Market at Malcolm Yards(https://malcolmyards.market/). More details will be provided at the summit.
 
 <table id="program-table">
   <tr>
@@ -700,7 +704,7 @@ Hall.
     <td><b>Closing remarks</b></td>
   </tr>
   <tr>
-    <td>18:15-20:30</td>
+    <td>18:00-20:30</td>
     <td><b>Dinner</b></td>
   </tr>
 </table>
@@ -709,10 +713,10 @@ Hall.
 
 ## Venue
 
-The workshop will be held in [Keller
+As previously indicated, the main venue for the summit is [Keller
 Hall](https://campusmaps.umn.edu/kenneth-h-keller-hall), the home of
 the Computer Science and Engineering Department on the east bank of the
-Minneapolis campus of the University of Minnesota.
+Minneapolis campus of the University of Minnesota. Once you have arrived here, we will acquaint you with the other places that are relevant to what will happen during the day.
 
 <center>
 <iframe src="https://www.google.com/maps/d/u/0/embed?mid=1SD-pEHoj8tcwQb_7fbRYS6no-FEsTHk&ehbc=2E312F"
@@ -738,9 +742,7 @@ example, has a stop right outside Keller Hall and it runs from
 downtown Minneapolis (just a few stops away) all the way to downtown St. Paul
 (many stops further away).
 
-We will add more information about accommodation, such as about
-special rates at hotels if we have been succeed in getting them. Be
-sure therefore to check back here later in November. 
+We could unfortunately not work out special rates for hotels; we could get these only if blocked a set of rooms and guaranteed occupancy, a commitment that the summit budget did not allow us to make. You may ask the organizers if you have questions about other accommodations, such as about the suitability of the location of a place you may have identified using Airbnb. 
 
 
 ## Travel / Public Transit
