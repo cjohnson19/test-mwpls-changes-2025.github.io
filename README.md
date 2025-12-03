@@ -213,7 +213,7 @@ Lunch and the poster session will take place in the Beacon Room of the
 [University Recreation and Wellness
 Center](https://campusmaps.umn.edu/university-recreation-and-wellness-center),
 which is about a block (or 5 minutes walking distance) east of Keller
-Hall. Dinner will be an informal, buy-your-own affair, but we intend to organize a collective expedition to one of the local food and drinks halls (like [The Market at Malcolm Yards](https://malcolmyards.market/). More details will be provided at the summit.
+Hall. Dinner will be an informal, buy-your-own affair, but we intend to organize a collective expedition to one of the local food and drinks halls (like [The Market at Malcolm Yards](https://malcolmyards.market/)). More details will be provided at the summit.
 
 <table id="program-table">
   <tr>
